@@ -70,7 +70,7 @@ server.post('/', (req,res)=>{
  
   server.delete("/:id", (req, res) => {
     db("accounts")
-      .where({ id: req.params.id }) // ALWAYS FILTER ON UPDATE (AND DELETE)
+      .where({ id: req.params.id })
       .del()
       .then(count => {
         res.status(200).json({ message: `${count} record(s) removed` });
